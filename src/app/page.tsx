@@ -411,16 +411,16 @@ export default function Portfolio() {
 
         <div className="flex justify-center w-full">
           <ProfileCard
-        name="Mario Uparela"
-        title="Software Developer"
-        handle="AKAMarioU"
-        status="Online"
-        contactText="Contact Me"
-        avatarUrl="https://arider.com/cdn/shop/files/r_4_1b5f8b73-095b-45bc-aef7-6776fe9e7b2f.png?v=1743496647&width=1445"
-        showUserInfo={true}
-        enableTilt={true}
-        onContactClick={() => console.log('Contact clicked')}
-        className="mt-16 mx-auto max-w-md"
+            name="Mario Uparela"
+            title="Software Developer"
+            handle="AKAMarioU"
+            status="Online"
+            contactText="Contact Me"
+            avatarUrl="https://arider.com/cdn/shop/files/r_4_1b5f8b73-095b-45bc-aef7-6776fe9e7b2f.png?v=1743496647&width=1445"
+            showUserInfo={true}
+            enableTilt={true}
+            onContactClick={() => window.open('https://w.app/wreoq0', '_blank')}
+            className="mt-16 mx-auto max-w-md"
           />
         </div>
       </motion.section>    
