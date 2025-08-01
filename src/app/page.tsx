@@ -54,8 +54,8 @@ export default function Portfolio() {
       tecnologias: ["Astro", "Figma", "Git", "Prisma", "Tailwind CSS"],
       imagen: "/dnamyk.png",
       video: undefined,
-      github: "https://github.com/urbanestia/dnamyk-landing",
-      demo: "https://dnamyk.urbanestia.co/",
+      github: "https://github.com/joshtin2505/dnamyk-landing",
+      demo: "https://dnamyk.com/",
     },
     {
       titulo: "Search Film",
