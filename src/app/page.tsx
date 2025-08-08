@@ -67,6 +67,15 @@ export default function Portfolio() {
       demo: "https://akamario.github.io/SearchFilm/",
     },
     {
+      titulo: 'Calculadora Simplex',
+      descripcion: 'Una calculadora web simple construida con React, Tailwind CSS, TypeScript que consume una API de cálculo hecha en Django.',
+      tecnologias: ['React', 'APIs', 'TypeScript', 'Django'],
+      imagen: '/Calculadora-simplex.png',
+      video: undefined,
+      github: 'https://github.com/AkaMario/Calculadora-Simplex',
+    },
+
+    {
       titulo: "Comming Soon Page",
       descripcion: "pagina de espera para un nuevo producto",
       tecnologias: ["React", "Redux", "Firebase", "Tailwind CSS", "next.js"],
