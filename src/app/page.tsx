@@ -428,7 +428,7 @@ export default function Portfolio() {
             avatarUrl="https://arider.com/cdn/shop/files/r_4_1b5f8b73-095b-45bc-aef7-6776fe9e7b2f.png?v=1743496647&width=1445"
             showUserInfo={true}
             enableTilt={true}
-            onContactClick={() => window.open('https://w.app/wreoq0', '_blank')}
+            onContactClick={() => window.open('https://wa.me/573043458159?text=Hola%2C%20vi%20tus%20proyectos', '_blank')}
             className="mt-16 mx-auto max-w-md"
           />
         </div>
