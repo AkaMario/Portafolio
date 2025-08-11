@@ -77,7 +77,7 @@ export default function Portfolio() {
 
     {
       titulo: 'Rediseño de Campus Tecnologico Comfenalco',
-      descripcion: 'Rediseño de la página del campus tecnológico de Comfenalco, mejorando la experiencia del usuario y la accesibilidad.',
+      descripcion: 'Rediseño de la página del campus tecnológico Comfenalco, mejorando la experiencia del usuario y la accesibilidad.',
       tecnologias: ['Figma'],
       imagen: 'https://www.las2orillas.co/wp-content/uploads/2024/09/1-81.jpg',
       video: undefined,
