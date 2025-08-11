@@ -76,6 +76,15 @@ export default function Portfolio() {
     },
 
     {
+      titulo: 'Rediseño de Campus Tecnologico Comfenalco',
+      descripcion: 'Rediseño de la página del campus tecnológico de Comfenalco, mejorando la experiencia del usuario y la accesibilidad.',
+      tecnologias: ['Figma'],
+      imagen: 'https://www.las2orillas.co/wp-content/uploads/2024/09/1-81.jpg',
+      video: undefined,
+      demo: 'https://www.figma.com/proto/JJQqISHgtFKrvXB7t3ZiXi/Campus?node-id=1-2&t=LhlL6ASJBc1Yilkc-1',
+    },
+
+    {
       titulo: "Comming Soon Page",
       descripcion: "pagina de espera para un nuevo producto",
       tecnologias: ["React", "Redux", "Firebase", "Tailwind CSS", "next.js"],
