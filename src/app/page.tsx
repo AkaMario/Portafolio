@@ -86,7 +86,7 @@ export default function Portfolio() {
 
     {
       titulo: "Comming Soon Page",
-      descripcion: "pagina de espera para un nuevo producto",
+      descripcion: "Card de espera para un nuevo proyecto",
       tecnologias: ["React", "Redux", "Firebase", "Tailwind CSS", "next.js"],
       imagen: undefined,
       video: "https://videos.pexels.com/video-files/5803086/5803086-uhd_2560_1440_25fps.mp4", // ejemplo de video
@@ -307,14 +307,14 @@ export default function Portfolio() {
                     </div>
                     <div className="flex gap-2">
                       <a href={proyecto.github} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="outline" className="border-cyan-400 text-cyan-400 bg-transparent">
+                      <Button size="sm" variant="outline" className="border-cyan-400 text-cyan-400 bg-transparent hover:cursor-pointer hover:scale-105 transition-all duration-300">
                         <Github className="w-4 h-4 mr-2" />
                         Código
                       </Button>
                       </a>
                       <a href={proyecto.demo} target="_blank" rel="noopener noreferrer">
 
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-purple-600">
+                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:cursor-pointer hover:scale-105 transition-all duration-300">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Demo
                       </Button>
