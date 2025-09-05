@@ -85,6 +85,16 @@ export default function Portfolio() {
     },
 
     {
+      titulo: "Calculadora metodo grafico IO",
+      descripcion: "Una calculadora web que utiliza el método gráfico para resolver ecuaciones lineales.",
+      tecnologias: ["React", "TypeScript", "Canvas", "Tailwind CSS", "Vite"],
+      imagen: '/public/Metodo-grafico.png',
+      video: undefined,
+      github: "https://github.com/AkaMario/Metodo-grafico",
+      demo: "https://akamario.github.io/Metodo-grafico/",
+    },
+
+    {
       titulo: "Comming Soon Page",
       descripcion: "Card de espera para un nuevo proyecto",
       tecnologias: ["React", "Redux", "Firebase", "Tailwind CSS", "next.js"],
