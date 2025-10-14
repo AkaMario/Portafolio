@@ -166,7 +166,7 @@ export default function Portfolio() {
       <AnimatedBackground />
 
       {/* Hero Section */}
-      <motion.section className="min-h-screen flex items-center justify-center relative z-10" style={{ y, opacity }}>
+      <motion.section className="min-h-screen flex items-center justify-center relative z-10 py-45" style={{ y, opacity }}>
         <div className="text-center space-y-8">
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
             <p className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -206,21 +206,34 @@ export default function Portfolio() {
               style={{ marginTop: '2rem', fontSize: '1rem' }}
               className="text-justify font-poppins font-semibold max-w-2xl mx-auto text-gray-300 transition-all duration-500 hover:text-white hover:scale-105 px-4 sm:px-10"
             >
-              <DecryptedText
-              text="Soy estudiante de Ingeniería de Sistemas con experiencia en soporte técnico, mantenimiento de equipos y automatización de tareas.
+              
+              <p>Soy estudiante de Ingeniería de Sistemas con experiencia en soporte técnico, mantenimiento de equipos y automatización de tareas.
               Me destaco por mi enfoque en la eficiencia operativa mediante el uso de herramientas digitales y programación web. Soy una
               persona proactiva, con excelentes habilidades de comunicación, organización y trabajo en equipo. Comprometido con el
-              aprendizaje continuo y con aportar soluciones prácticas que mejoren los procesos tecnológicos de las organizaciones"
-              animateOn="hover"
-              revealDirection="start"
-              />
+              aprendizaje continuo y con aportar soluciones prácticas que mejoren los procesos tecnológicos de las organizaciones</p>
+              
+
             </div>
+              <div className="flex justify-center w-full">
+          <ProfileCard
+            name="Mario Uparela"
+            title="Software Developer"
+            handle="AKAMarioU"
+            status="Online"
+            contactText="Contact Me"
+            avatarUrl="https://arider.com/cdn/shop/files/r_4_1b5f8b73-095b-45bc-aef7-6776fe9e7b2f.png?v=1743496647&width=1445"
+            showUserInfo={true}
+            enableTilt={true}
+            onContactClick={() => window.open('https://wa.me/573043458159?text=Hola%2C%20vi%20tus%20proyectos', '_blank')}
+            className="mt-16 mx-auto max-w-md"
+          />
+              </div>
         </div>
       </motion.section>
 
       {/* Habilidades Section */}
       <motion.section
-        className="py-20 px-4 relative z-10"
+        className="py-15 px-4 relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -437,20 +450,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="flex justify-center w-full">
-          <ProfileCard
-            name="Mario Uparela"
-            title="Software Developer"
-            handle="AKAMarioU"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl="https://arider.com/cdn/shop/files/r_4_1b5f8b73-095b-45bc-aef7-6776fe9e7b2f.png?v=1743496647&width=1445"
-            showUserInfo={true}
-            enableTilt={true}
-            onContactClick={() => window.open('https://wa.me/573043458159?text=Hola%2C%20vi%20tus%20proyectos', '_blank')}
-            className="mt-16 mx-auto max-w-md"
-          />
-        </div>
+        
       </motion.section>    
     </div>
 
