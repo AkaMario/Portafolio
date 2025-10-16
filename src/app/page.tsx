@@ -5,12 +5,13 @@ import type React from "react"
 import { useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Github, Linkedin, ExternalLink } from "lucide-react"
-import {Button} from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import AnimatedBackground from "@/components/animated-background"
-import DecryptedText from "@/components/ui/DescryptedText"
 import ProfileCard from "@/components/ProfileCard"
+import LogoLoop from "@/components/LogoLoop"
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma, SiDjango, SiJavascript, SiGit, SiVite, SiAstro } from 'react-icons/si';
 
 export default function Portfolio() {
   const { scrollYProgress } = useScroll()
@@ -28,14 +29,14 @@ export default function Portfolio() {
     // Enviar el formulario usando EmailJS
     try {
       const response = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        nombre: formData.nombre,
-        email: formData.email,
-        mensaje: formData.mensaje,
-        destinatario: "mariouppo1@gmail.com",
-      }),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          email: formData.email,
+          mensaje: formData.mensaje,
+          destinatario: "mariouppo1@gmail.com",
+        }),
       })
       if (!response.ok) throw new Error("Error al enviar el mensaje")
     } catch (error) {
@@ -49,9 +50,18 @@ export default function Portfolio() {
 
   const proyectos = [
     {
+      titulo: "Calculadora metodo grafico",
+      descripcion: "Calculadora y graficadora que utiliza en investigacion de operaciones para resolver ecuaciones lineales.",
+      tecnologias: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      imagen: '/Metodo-grafico.png',
+      video: undefined,
+      github: "https://github.com/AkaMario/Metodo-grafico",
+      demo: "https://akamario.github.io/Metodo-grafico/",
+    },
+    {
       titulo: "DNAMYK",
-      descripcion: "Landing page para una startup de tecnología colombiana en crecimiento",
-      tecnologias: ["Astro", "Figma", "Git", "Prisma", "Tailwind CSS"],
+      descripcion: "Desarrolle y diseñe esta landing page para una startup de servicios de tecnología colombiana en crecimiento",
+      tecnologias: ["Astro", "Figma", "Git", "Tailwind CSS"],
       imagen: "/dnamyk.png",
       video: undefined,
       github: "https://github.com/joshtin2505/dnamyk-landing",
@@ -59,8 +69,8 @@ export default function Portfolio() {
     },
     {
       titulo: "Search Film",
-      descripcion: "web para buscar películas y series usando la API de TMDB y React",
-      tecnologias: ["API", "React.js", "Git", "Tailwind CSS"],
+      descripcion: "Desarrolle y diseñe esta Website para buscar películas y series con autoupdate usando la API de TMDB y React",
+      tecnologias: ["API", "React", "Git", "Tailwind CSS"],
       imagen: "/SearchFilm.png",
       video: undefined,
       github: "https://github.com/AkaMario/SearchFilm/",
@@ -68,8 +78,8 @@ export default function Portfolio() {
     },
     {
       titulo: 'Calculadora Simplex',
-      descripcion: 'Una calculadora web simple construida con React, Tailwind CSS, TypeScript que consume una API de cálculo hecha en Django.',
-      tecnologias: ['React', 'APIs', 'TypeScript', 'Django'],
+      descripcion: 'Calculadora simplex construida con React, Tailwind CSS, TypeScript que consume una API de cálculo hecha en Django, Se usa en IO para resolver problemas de programación lineal.',
+      tecnologias: ['React', 'API', 'TypeScript', 'Django'],
       imagen: '/Calculadora-simplex.png',
       video: undefined,
       github: 'https://github.com/AkaMario/Calculadora-Simplex',
@@ -84,15 +94,6 @@ export default function Portfolio() {
       demo: 'https://www.figma.com/proto/JJQqISHgtFKrvXB7t3ZiXi/Campus?node-id=1-2&t=LhlL6ASJBc1Yilkc-1',
     },
 
-    {
-      titulo: "Calculadora metodo grafico IO",
-      descripcion: "Una calculadora web que utiliza el método gráfico para resolver ecuaciones lineales.",
-      tecnologias: ["React", "TypeScript", "Canvas", "Tailwind CSS", "Vite"],
-      imagen: '/Metodo-grafico.png',
-      video: undefined,
-      github: "https://github.com/AkaMario/Metodo-grafico",
-      demo: "https://akamario.github.io/Metodo-grafico/",
-    },
 
     {
       titulo: "Comming Soon Page",
@@ -141,98 +142,124 @@ export default function Portfolio() {
     },
   ]
 
-  const habilidades = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "REST APIs",
-    "Git",
-    "Figma",
-    "Tailwind CSS",
-    "Framer Motion",
-    'Excel',
-    'ClickUp',
-    'Metodologías Ágiles',
-    'Automatización de Tareas',
-    'Soporte Técnico',
-    'Mantenimiento de Equipos',
-  ]
+  // const habilidades = [
+  //   "JavaScript",
+  //   "TypeScript",
+  //   "React",
+  //   "Next.js",
+  //   "REST APIs",
+  //   "Git",
+  //   "Figma",
+  //   "Tailwind CSS",
+  //   "Framer Motion",
+  //   'Excel',
+  //   'ClickUp',
+  //   'Metodologías Ágiles',
+  //   'Automatización de Tareas',
+  //   'Soporte Técnico',
+  //   'Mantenimiento de Equipos',
+  // ]
+  const techLogos = [
+    { node: <SiReact />, title: "React", href: "https://react.dev" },
+    { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+    { node: <SiVite />, title: "Vite", href: "https://vitejs.dev" },
+    { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+    { node: <SiFigma />, title: "Figma", href: "https://figma.com" },
+    { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com/" },
+    { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/es/docs/Web/JavaScript" },
+    { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
+    { node: <SiAstro />, title: "Astro", href: "https://astro.build/" },
+  ];
+
 
   return (
     <div>
 
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      <AnimatedBackground />
+      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        <AnimatedBackground />
 
-      {/* Hero Section */}
-      <motion.section className="min-h-screen flex items-center justify-center relative z-10 py-45" style={{ y, opacity }}>
-        <div className="text-center space-y-8">
-          <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-            <p className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Mario Uparela
-            </p>
-            <p className="text-xl md:text-2xl text-gray-300 mt-4">Desarrollador Web & Diseñador UX/UI</p>
-          </motion.div>
+        {/* Hero Section */}
+        <motion.section
+          className="relative z-10 flex items-center justify-center px-4 py-12 min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] xl:min-h-screen sm:py-16 md:py-20"
+          style={{ y, opacity }}
+        >
+          <div className="text-center space-y-8 w-full max-w-lg sm:max-w-2xl md:max-w-4xl">
+            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+              <p className="text-4xl sm:text-5xl md:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent relative animate-glow">
+                Mario Uparela
+                <span
+                  aria-hidden
+                  className="absolute inset-0 blur-[6px] opacity-60 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                >
+                  Mario Uparela
+                </span>
+              </p>
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mt-4">Desarrollador Web & Diseñador UX/UI</p>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="flex gap-6 justify-center"
-          >
-            <a href="https://github.com/AkaMario">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black bg-transparent hover:scale-105 transition-all duration-300 hover:rotate-2"
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="flex flex-col gap-10"
             >
-              <Github className="w-5 h-5 mr-2" />
-              GitHub
-            </Button>
-            </a>
-            <a href="https://www.linkedin.com/in/mario-uparela-posada-18661632b/">  
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-black bg-transparent hover:scale-105 transition-all duration-300 hover:rotate-2"
-            >
-              <Linkedin className="w-5 h-5 mr-2" />
-              LinkedIn
-            </Button>
-            </a>
-          </motion.div>
-            <div
-              style={{ marginTop: '2rem', fontSize: '1rem' }}
-              className="text-justify font-poppins font-semibold max-w-2xl mx-auto text-gray-300 transition-all duration-500 hover:text-white hover:scale-105 px-4 sm:px-10"
-            >
-              
-              <p>Soy estudiante de Ingeniería de Sistemas con experiencia en soporte técnico, mantenimiento de equipos y automatización de tareas.
-              Me destaco por mi enfoque en la eficiencia operativa mediante el uso de herramientas digitales y programación web. Soy una
-              persona proactiva, con excelentes habilidades de comunicación, organización y trabajo en equipo. Comprometido con el
-              aprendizaje continuo y con aportar soluciones prácticas que mejoren los procesos tecnológicos de las organizaciones</p>
-              
-
-            </div>
-              <div className="flex justify-center w-full">
-          <ProfileCard
-            name="Mario Uparela"
-            title="Software Developer"
-            handle="AKAMarioU"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl="https://arider.com/cdn/shop/files/r_4_1b5f8b73-095b-45bc-aef7-6776fe9e7b2f.png?v=1743496647&width=1445"
-            showUserInfo={true}
-            enableTilt={true}
-            onContactClick={() => window.open('https://wa.me/573043458159?text=Hola%2C%20vi%20tus%20proyectos', '_blank')}
-            className="mt-16 mx-auto max-w-md"
-          />
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <a href="https://github.com/AkaMario">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black bg-transparent hover:scale-105 transition-all duration-300 hover:rotate-2"
+                  >
+                    <Github className="w-5 h-5 mr-2" />
+                    GitHub
+                  </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/mario-uparela-posada-18661632b/">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-black bg-transparent hover:scale-105 transition-all duration-300 hover:rotate-2"
+                  >
+                    <Linkedin className="w-5 h-5 mr-2" />
+                    LinkedIn
+                  </Button>
+                </a>
               </div>
-        </div>
-      </motion.section>
 
-      {/* Habilidades Section */}
-      <motion.section
+              <div
+                className="justify-center bg-gray-900/50 border border-gray-700 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm py-6 rounded-lg sm:mx-33"
+              >
+
+                <p className="text-justify font-poppins font-semibold max-w-2xl mx-auto text-gray-300 transition-all duration-500 hover:text-white hover:scale-102 px-4 sm:px-10">
+                  Estudio Ingeniería de Sistemas, tengo experiencia en soporte técnico, mantenimiento de equipos y automatización de tareas.
+                  Me destaco por mi eficiencia operativa usando herramientas digitales y de programación web. Me considero
+                  proactivo, con excelentes habilidades de comunicación, organización y trabajo en equipo. Comprometido con el
+                  aprendizaje continuo y con aportar soluciones prácticas que mejoren los procesos tecnológicos de las organizaciones</p>
+
+
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+
+        {/* Habilidades Section */}
+        <div style={{ height: '120px', position: 'relative', overflow: 'hidden' }} className="py-10 px-4 relative z-10">
+          <LogoLoop
+            logos={techLogos}
+            speed={50}
+            direction="left"
+            logoHeight={52}
+            gap={40}
+            pauseOnHover
+            scaleOnHover
+            fadeOut 
+            fadeOutColor="#000000"
+            ariaLabel="Technology partners"
+          />
+        </div>
+        {/* <motion.section
         className="py-15 px-4 relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -266,193 +293,209 @@ export default function Portfolio() {
             ))}
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
-      {/* Proyectos Section */}
-      <motion.section
-        className="py-20 px-4 relative z-10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Mis Proyectos
-          </motion.h2>
+        {/* Proyectos Section */}
+        <motion.section
+          className="py-20 px-4 relative z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Mis Proyectos
+            </motion.h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {proyectos.map((proyecto, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="group"
-              >
-                <Card className="bg-gray-900/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={proyecto.imagen || "/placeholder.svg"}
-                      // alt={proyecto.titulo}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 "
-                    />
-                    {proyecto.video && (
-                      <video
-                        src={proyecto.video}
-                        autoPlay
-                        loop
-                        muted
-                        className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {proyectos.map((proyecto, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                  className="group"
+                >
+                  <Card className="bg-gray-900/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm">
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={proyecto.imagen || "/placeholder.svg"}
+                        // alt={proyecto.titulo}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 "
                       />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-cyan-400">{proyecto.titulo}</CardTitle>
-                    <CardDescription className="text-gray-300">{proyecto.descripcion}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {proyecto.tecnologias.map((tech, i) => (
-                        <Badge key={i} variant="secondary" className="bg-purple-900/50 text-purple-300">
-                          {tech}
-                        </Badge>
-                      ))}
+                      {proyecto.video && (
+                        <video
+                          src={proyecto.video}
+                          autoPlay
+                          loop
+                          muted
+                          className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     </div>
-                    <div className="flex gap-2">
-                      <a href={proyecto.github} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="outline" className="border-cyan-400 text-cyan-400 bg-transparent hover:cursor-pointer hover:scale-105 transition-all duration-300">
-                        <Github className="w-4 h-4 mr-2" />
-                        Código
-                      </Button>
-                      </a>
-                      <a href={proyecto.demo} target="_blank" rel="noopener noreferrer">
-
-                      <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:cursor-pointer hover:scale-105 transition-all duration-300">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
-                      </Button>
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Experiencia Section */}
-      <motion.section
-        className="py-20 px-4 relative z-10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Experiencia Laboral
-          </motion.h2>
-
-          <div className="space-y-8">
-            {experiencias.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-gray-900/50 border-gray-700 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <CardTitle className="text-purple-400">{exp.puesto}</CardTitle>
-                        <CardDescription className="text-lg text-cyan-300">{exp.empresa}</CardDescription>
+                    <CardHeader>
+                      <CardTitle className="text-cyan-400">{proyecto.titulo}</CardTitle>
+                      <CardDescription className="text-gray-300">{proyecto.descripcion}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {proyecto.tecnologias.map((tech, i) => (
+                          <Badge key={i} variant="secondary" className="bg-purple-900/50 text-purple-300">
+                            {tech}
+                          </Badge>
+                        ))}
                       </div>
-                      <Badge variant="outline" className="border-pink-500 text-pink-400">
-                        {exp.periodo}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-300">{exp.descripcion}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+                      <div className="flex gap-2">
+                        <a href={proyecto.github} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" variant="outline" className="border-cyan-400 text-cyan-400 bg-transparent hover:cursor-pointer hover:scale-105 transition-all duration-300">
+                            <Github className="w-4 h-4 mr-2" />
+                            Código
+                          </Button>
+                        </a>
+                        <a href={proyecto.demo} target="_blank" rel="noopener noreferrer">
 
-      {/* Estudios Section */}
-      <motion.section
-        className="py-20 px-4 relative z-10 flex flex-col items-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto w-full">
-          <motion.h2
-        className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-          >
-        Educación
-          </motion.h2>
-
-          <div className="space-y-8">
-        {estudios.map((estudio, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-gray-900/50 border-gray-700 hover:border-green-400 transition-all duration-300 backdrop-blur-sm">
-          <CardHeader>
-            <div className="flex justify-between items-start">
-              <div>
-            <CardTitle className="text-green-400">{estudio.titulo}</CardTitle>
-            <CardDescription className="text-lg text-cyan-300">{estudio.institucion}</CardDescription>
-              </div>
-              <Badge variant="outline" className="border-green-500 text-green-400">
-            {estudio.periodo}
-              </Badge>
+                          <Button size="sm" className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:cursor-pointer hover:scale-105 transition-all duration-300">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Demo
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-300">{estudio.descripcion}</p>
-          </CardContent>
-            </Card>
-          </motion.div>
-        ))}
           </div>
-        </div>
+        </motion.section>
 
-        
-      </motion.section>    
-    </div>
+        {/* Experiencia Section */}
+        <motion.section
+          className="py-20 px-4 relative z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-4xl mx-auto">
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Experiencia Laboral
+            </motion.h2>
+
+            <div className="space-y-8">
+              {experiencias.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="bg-gray-900/50 border-gray-700 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm">
+                    <CardHeader>
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <CardTitle className="text-purple-400">{exp.puesto}</CardTitle>
+                          <CardDescription className="text-lg text-cyan-300">{exp.empresa}</CardDescription>
+                        </div>
+                        <Badge variant="outline" className="border-pink-500 text-pink-400">
+                          {exp.periodo}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-300">{exp.descripcion}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Estudios Section */}
+        <motion.section
+          className="py-20 px-4 relative z-10 flex flex-col items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-4xl mx-auto w-full">
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Educación
+            </motion.h2>
+
+            <div className="space-y-8">
+              {estudios.map((estudio, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="bg-gray-900/50 border-gray-700 hover:border-green-400 transition-all duration-300 backdrop-blur-sm">
+                    <CardHeader>
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <CardTitle className="text-green-400">{estudio.titulo}</CardTitle>
+                          <CardDescription className="text-lg text-cyan-300">{estudio.institucion}</CardDescription>
+                        </div>
+                        <Badge variant="outline" className="border-green-500 text-green-400">
+                          {estudio.periodo}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-300">{estudio.descripcion}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+
+        </motion.section>
+
+        <div className="flex justify-center relative z-10 pb-20">
+          <ProfileCard
+            name="Mario Uparela"
+            title="Web Developer"
+            handle="AKAMarioU"
+            status="Online"
+            contactText="Contact Me"
+            avatarUrl="/FOTO_MARIO.png"
+            showUserInfo={true}
+            enableTilt={true}
+            onContactClick={() => window.open('https://wa.me/573043458159?text=Hola%2C%20vi%20tus%20proyectos', '_blank')}
+            className="mt-16 mx-auto max-w-md"
+          />
+          
+        </div>
+      </div>
 
 
       <footer className="py-8 text-center text-gray-400 relative z-10">
