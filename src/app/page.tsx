@@ -96,13 +96,13 @@ export default function Portfolio() {
 
 
     {
-      titulo: "Comming Soon Page",
-      descripcion: "Card de espera para un nuevo proyecto",
-      tecnologias: ["React", "Redux", "Firebase", "Tailwind CSS", "next.js"],
-      imagen: undefined,
-      video: "https://videos.pexels.com/video-files/5803086/5803086-uhd_2560_1440_25fps.mp4", // ejemplo de video
+      titulo: "Rediseño de Landing Page Regace Lang",
+      descripcion: "Rediseño de la landing page de Regace Lang, es una empresa tecnológica internacional dedicada a entrenar, evaluar y mejorar modelos de IA",
+      tecnologias: ["Figma"],
+      imagen: '/RegaceLang.png',
+      video: undefined, // ejemplo de video
       github: "#",
-      demo: "#",
+      demo: "https://www.figma.com/proto/cZIJfiiYFTv1hBy9gY1aSG/Redise%C3%B1o-Regace-Lang?page-id=0%3A1&node-id=7-17&viewport=643%2C35%2C0.42&t=8MOOqlOrJZR2Fawm-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=7%3A17",
     },
   ]
 
