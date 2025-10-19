@@ -122,7 +122,7 @@ export default function Portfolio() {
       puesto: "Auxiliar de sistemas",
       empresa: "CITUCAR",
       periodo: "2022 - 2022",
-      descripcion: "Fueron 11 meses de mucho aprendizaje, soporte técnico y mantenimiento de equipos informáticos, así como la automatización de tareas repetitivas fue mi primer trabajo formal en el área de sistemas",
+      descripcion: "Fueron 11 meses de mucho aprendizaje, Capacitaciones y mantenimiento de equipos informáticos, así como la automatización de tareas repetitivas, fue mi primer trabajo formal en el área de Tecnologia",
     },
     {
       puesto: "Desarrollador Freelance",
