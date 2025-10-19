@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import AnimatedBackground from "@/components/animated-background"
 import ProfileCard from "@/components/ProfileCard"
 import LogoLoop from "@/components/LogoLoop"
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma, SiDjango, SiJavascript, SiGit, SiVite, SiAstro } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma, SiDjango, SiJavascript, SiGit, SiVite, SiAstro, SiNodedotjs, SiNpm, SiPostgresql, SiMysql } from 'react-icons/si';
 
 export default function Portfolio() {
   const { scrollYProgress } = useScroll()
@@ -108,6 +108,11 @@ export default function Portfolio() {
 
   const experiencias = [
     {
+      puesto: "Freelance",
+      periodo: "2025 - Presente",
+      descripcion: "Actualmente trabajo como desarrollador web freelance, creando y diseñando sitios web personalizados y aplicaciones para clientes diversos. Me especializo en el desarrollo front-end, utilizando tecnologías modernas para ofrecer soluciones eficientes y atractivas.",
+    },
+    {
       puesto: "Aprendiz de implementación",
       empresa: "ESTELA",
       periodo: "2024 - 2024",
@@ -159,18 +164,27 @@ export default function Portfolio() {
   //   'Soporte Técnico',
   //   'Mantenimiento de Equipos',
   // ]
-  const techLogos = [
+  const techLogosFrontEnd = [
     { node: <SiReact />, title: "React", href: "https://react.dev" },
     { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
     { node: <SiVite />, title: "Vite", href: "https://vitejs.dev" },
     { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
     { node: <SiFigma />, title: "Figma", href: "https://figma.com" },
-    { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com/" },
     { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/es/docs/Web/JavaScript" },
     { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-    { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
     { node: <SiAstro />, title: "Astro", href: "https://astro.build/" },
   ];
+
+  const techLogosFullStack = [
+    { node: <SiDjango />, title: "Django", href: "https://www.djangoproject.com/" },
+    { node: <SiGit />, title: "Git", href: "https://git-scm.com/" },
+    { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org/" },
+    { node: <SiNpm />, title: "NPM", href: "https://www.npmjs.com/" },
+    { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org/" },
+    { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com/" },
+
+
+  ]; // Duplicar los logos para un bucle más suave
 
 
   return (
@@ -247,8 +261,8 @@ export default function Portfolio() {
         {/* Habilidades Section */}
         <div style={{ height: '120px', position: 'relative', overflow: 'hidden' }} className="py-10 px-4 relative z-10">
           <LogoLoop
-            logos={techLogos}
-            speed={50}
+            logos={techLogosFrontEnd}
+            speed={40}
             direction="left"
             logoHeight={52}
             gap={40}
@@ -259,41 +273,20 @@ export default function Portfolio() {
             ariaLabel="Technology partners"
           />
         </div>
-        {/* <motion.section
-        className="py-15 px-4 relative z-10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            className="flex flex-wrap gap-4 justify-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {habilidades.map((habilidad, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.1 }}
-              >
-                <Badge
-                  variant="outline"
-                  className="text-lg py-2 px-4 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
-                >
-                  {habilidad}
-                </Badge>
-              </motion.div>
-            ))}
-          </motion.div>
+        <div style={{ height: '120px', position: 'relative', overflow: 'hidden' }} className="py-10 px-4 relative z-10">
+          <LogoLoop
+            logos={techLogosFullStack}
+            speed={-40}
+            direction="left"
+            logoHeight={52}
+            gap={40}
+            pauseOnHover
+            scaleOnHover
+            fadeOut 
+            fadeOutColor="#000000"
+            ariaLabel="Technology partners"
+          />
         </div>
-      </motion.section> */}
 
         {/* Proyectos Section */}
         <motion.section
