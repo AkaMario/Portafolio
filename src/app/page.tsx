@@ -108,7 +108,7 @@ export default function Portfolio() {
 
   const experiencias = [
     {
-      puesto: "Freelance",
+      puesto: "Desarrollador Freelance",
       periodo: "2025 - Presente",
       descripcion: "Actualmente trabajo como desarrollador web freelance, creando y diseñando sitios web personalizados y aplicaciones para clientes diversos. Me especializo en el desarrollo front-end, utilizando tecnologías modernas para ofrecer soluciones eficientes y atractivas.",
     },
@@ -125,8 +125,7 @@ export default function Portfolio() {
       descripcion: "Fueron 11 meses de mucho aprendizaje, soporte técnico y mantenimiento de equipos informáticos, así como la automatización de tareas repetitivas fue mi primer trabajo formal en el área de sistemas",
     },
     {
-      puesto: "Desarrollador freelance",
-      empresa: "independiente",
+      puesto: "Desarrollador Freelance",
       periodo: "2021 - 2023",
       descripcion: "Di mis primeros pasos en el desarrollo web, creando sitios y aplicaciones para estudiantes de mi universidad la mas destacada fue una lading page para un proyectos de psicologia",
     },
