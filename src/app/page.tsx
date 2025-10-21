@@ -59,13 +59,12 @@ export default function Portfolio() {
       demo: "https://akamario.github.io/Metodo-grafico/",
     },
     {
-      titulo: "DNAMYK",
-      descripcion: "Desarrolle y diseñe esta landing page para una startup de servicios de tecnología colombiana en crecimiento",
-      tecnologias: ["Astro", "Figma", "Git", "Tailwind CSS"],
-      imagen: "/dnamyk.png",
+      titulo: 'Sistemas POS Web',
+      descripcion: 'Sistema de punto de venta (POS) web desarrollado con React, Tailwind CSS y TypeScript. Permite gestionar inventarios, ventas y generar reportes en tiempo real para pequeñas empresas usando Local Storage.',
+      tecnologias: ['React','Vite', 'TypeScript', 'Tailwind CSS', 'Local Storage'],
+      imagen: './pos.png',
       video: undefined,
-      github: "https://github.com/joshtin2505/dnamyk-landing",
-      demo: "https://dnamyk.com/",
+      demo: 'https://akamario.github.io/MiniPOS/',
     },
     {
       titulo: "Search Film",
@@ -84,14 +83,15 @@ export default function Portfolio() {
       video: undefined,
       github: 'https://github.com/AkaMario/Calculadora-Simplex',
     },
-
+    
     {
-      titulo: 'Rediseño de Campus Tecnologico Comfenalco',
-      descripcion: 'Rediseño de la página del campus tecnológico Comfenalco, mejorando la experiencia del usuario y la accesibilidad.',
-      tecnologias: ['Figma'],
-      imagen: 'https://www.las2orillas.co/wp-content/uploads/2024/09/1-81.jpg',
+      titulo: "DNAMYK",
+      descripcion: "Desarrolle y diseñe esta landing page para una startup de servicios de tecnología colombiana en crecimiento",
+      tecnologias: ["Astro", "Figma", "Git", "Tailwind CSS"],
+      imagen: "/dnamyk.png",
       video: undefined,
-      demo: 'https://www.figma.com/proto/JJQqISHgtFKrvXB7t3ZiXi/Campus?node-id=1-2&t=LhlL6ASJBc1Yilkc-1',
+      github: "https://github.com/joshtin2505/dnamyk-landing",
+      demo: "https://dnamyk.com/",
     },
 
 
@@ -122,7 +122,7 @@ export default function Portfolio() {
       puesto: "Auxiliar de sistemas",
       empresa: "CITUCAR",
       periodo: "2022 - 2022",
-      descripcion: "Fueron 11 meses de mucho aprendizaje, Capacitaciones y mantenimiento de equipos informáticos, así como la automatización de tareas repetitivas, fue mi primer trabajo formal en el área de Tecnologia",
+      descripcion: "Fueron 11 meses de mucho aprendizaje, Capacitaciones y mantenimiento de equipos informáticos, así como la automatización de tareas repetitivas, fue mi primer trabajo formal en el área de sistemas",
     },
     {
       puesto: "Desarrollador Freelance",
