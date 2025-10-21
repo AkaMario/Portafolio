@@ -60,10 +60,11 @@ export default function Portfolio() {
     },
     {
       titulo: 'Sistemas POS Web',
-      descripcion: 'Sistema de punto de venta (POS) web desarrollado con React, Tailwind CSS y TypeScript. Permite gestionar inventarios, ventas y generar reportes en tiempo real para pequeñas empresas usando Local Storage.',
+      descripcion: 'Sistema de punto de venta desarrollado con React, que permite gestionar inventarios, ventas y generar reportes para pequeñas empresas usando Local Storage.',
       tecnologias: ['React','Vite', 'TypeScript', 'Tailwind CSS', 'Local Storage'],
       imagen: './pos.png',
       video: undefined,
+      github: 'https://github.com/AkaMario/MiniPOS',
       demo: 'https://akamario.github.io/MiniPOS/',
     },
     {
