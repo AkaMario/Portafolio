@@ -147,23 +147,37 @@ export default function Portfolio() {
     },
   ]
 
-  // const habilidades = [
-  //   "JavaScript",
-  //   "TypeScript",
-  //   "React",
-  //   "Next.js",
-  //   "REST APIs",
-  //   "Git",
-  //   "Figma",
-  //   "Tailwind CSS",
-  //   "Framer Motion",
-  //   'Excel',
-  //   'ClickUp',
-  //   'Metodologías Ágiles',
-  //   'Automatización de Tareas',
-  //   'Soporte Técnico',
-  //   'Mantenimiento de Equipos',
-  // ]
+
+  const certificados = [
+    {
+      titulo: "Diseño UX: experiencia de usuario UX/UI",
+      institucion: "Udemy",
+      link: "https://www.udemy.com/certificate/UC-f20f7e78-b1f6-4351-8e89-5b50a74cad1c/",
+    },
+
+    {
+      titulo: "Responsive Web Design",
+      institucion: "FreeCodeCamp",
+      link: "https://freecodecamp.org/certification/fcc00c15089-5736-44fd-b8f6-5ed8262bbfaa/responsive-web-design",
+
+    },
+
+    {
+      titulo: "JavaScript Algorithms and Data Structures",
+      institucion: "FreeCodeCamp",
+      link: "https://freecodecamp.org/certification/fcc00c15089-5736-44fd-b8f6-5ed8262bbfaa/javascript-algorithms-and-data-structures-v8",
+
+    },
+
+    {
+      titulo: "Gestión de Proyectos",
+      institucion: "Ministerio de Tecnologías de la Información y las Comunicaciones",
+      link: "https://lms.mintic.gov.co/mod/customcert/verify_certificate.php?contextid=102375&code=YoMuYUGJ8x&qrcode=1",
+    },
+
+
+
+  ];
   const techLogosFrontEnd = [
     { node: <SiReact />, title: "React", href: "https://react.dev" },
     { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
@@ -209,7 +223,7 @@ export default function Portfolio() {
                   Mario Uparela
                 </span>
               </p>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mt-4">Desarrollador Web & Diseñador UX/UI</p>
+              <p className="text-3xl sm:text-3xl md:text-4xl text-gray-300 mt-4">Web developer & UX/UI designer</p>
             </motion.div>
 
             <motion.div
@@ -242,12 +256,12 @@ export default function Portfolio() {
               </div>
 
               <div
-                className="justify-center bg-gray-900/50 border border-gray-700 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm py-6 rounded-lg sm:mx-33"
+                className="justify-center bg-gray-900/50 border border-gray-700 backdrop-blur-sm hover:border-cyan-400 transition-all duration-300 py-6 rounded-lg sm:mx-33"
               >
 
-                <p className="text-justify font-poppins font-semibold max-w-2xl mx-auto text-gray-300 transition-all duration-500 hover:text-white hover:scale-102 px-4 sm:px-10">
-                  Estudio Ingeniería de Sistemas, tengo experiencia en soporte técnico, mantenimiento de equipos y automatización de tareas.
-                  Me destaco por mi eficiencia operativa usando herramientas digitales y de programación web. Me considero
+                <p className="text-left font-poppins font-semibold max-w-2xl mx-auto text-gray-300 transition-all duration-500 hover:text-white hover:scale-102 px-4 sm:px-10">
+                  Hola 👋, Soy Mario aun me encuentro estudiando pero tengo experiencia en desarrollo web, soporte técnico y automatización de tareas,
+                  me destaco por mi eficiencia operativa usando herramientas digitales y desarrollo de interfaces. Me considero
                   proactivo, con excelentes habilidades de comunicación, organización y trabajo en equipo. Comprometido con el
                   aprendizaje continuo y con aportar soluciones prácticas que mejoren los procesos tecnológicos de las organizaciones</p>
 
@@ -473,24 +487,74 @@ export default function Portfolio() {
 
         </motion.section>
 
-        <div className="flex justify-center relative z-10 pb-20">
-          <ProfileCard
-            name="Mario Uparela"
-            title="Web Developer"
-            handle="AKAMarioU"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl="/FOTO_MARIO.png"
-            showUserInfo={true}
-            enableTilt={true}
-            onContactClick={() => window.open('https://wa.me/573043458159?text=Hola%2C%20vi%20tus%20proyectos', '_blank')}
-            className="mt-16 mx-auto max-w-md"
-          />
-          
-        </div>
+        {/*Certificados Section*/}
+        <motion.section
+          className="py-20 px-4 relative z-10 flex flex-col items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-4xl mx-auto w-full ">
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Certificados
+            </motion.h2>
+            <div className="flex justify-center relative z-10 gap-20 flex flex-col md:flex-row items-start md:items-center relative z-10 gap-8 md:gap-20">
+              <ProfileCard
+                name="Mario Uparela"
+                title="Web Developer"
+                handle="AKAMarioU"
+                status="Online"
+                contactText="Contact Me"
+                avatarUrl="/FOTO_MARIO.png"
+                showUserInfo={true}
+                enableTilt={true}
+                onContactClick={() => window.open('https://wa.me/573043458159?text=Hola%2C%20vi%20tus%20proyectos', '_blank')}
+                className="mx-auto max-w-md"
+              />
+              <div className="justify-center space-y-8">
+                {certificados.map((certificado, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <Card className="bg-gray-900/50 border-gray-700 hover:border-green-400 transition-all duration-300 backdrop-blur-sm">
+                      <CardHeader>
+                        <div className="flex-col justify-between items-center gap-4 md:flex-row md:gap-0 md:flex">
+                          <div>
+                          <CardTitle className="text-green-400">{certificado.titulo}</CardTitle>
+                          <CardDescription className="text-lg text-cyan-300">{certificado.institucion}</CardDescription>
+                        </div>
+                          <a href={certificado.link}>
+                          <Button size="sm" variant="outline" className="border-green-500 text-green-400 bg-transparent hover:cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-transparent hover:text-green-400">
+                            <ExternalLink className="w-4 h-4 mr-2 " />
+                            Ver
+                          </Button>
+                        </a>
+                        
+                      </div>
+                    </CardHeader>
+                    
+                  </Card>
+                </motion.div>
+              ))}
+              
+              </div>
+            </div>
+          </div>
+
+
+        </motion.section>        
       </div>
-
-
       <footer className="py-8 text-center text-gray-400 relative z-10">
         <p>&copy; 2025 Mario Uparela. Todos los derechos reservados.</p>
       </footer>
