@@ -260,8 +260,8 @@ export default function Portfolio() {
               >
 
                 <p className="text-left font-poppins font-semibold max-w-2xl mx-auto text-gray-300 transition-all duration-500 hover:text-white hover:scale-102 px-4 sm:px-10">
-                  Hola 👋, Soy Mario aun me encuentro estudiando pero tengo experiencia en desarrollo web, soporte técnico y automatización de tareas,
-                  me destaco por mi eficiencia operativa usando herramientas digitales y desarrollo de interfaces. Me considero
+                  Hola 👋, Soy Mario aun me encuentro estudiando pero tengo experiencia en desarrollo web, diseño de interfaces,
+                  soporte técnico y automatización de tareas, me destaco por mi eficiencia operativa usando herramientas digitales. Me considero
                   proactivo, con excelentes habilidades de comunicación, organización y trabajo en equipo. Comprometido con el
                   aprendizaje continuo y con aportar soluciones prácticas que mejoren los procesos tecnológicos de las organizaciones</p>
 
